@@ -1,5 +1,6 @@
 import React from "react";
 import MyAppBar from "./components/AppBar.jsx";
+import BottomNav from "./components/BottomNav";
 import UserListBox from "./components/UserListBox.jsx";
 import MainTile from "./components/MainTile.jsx";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
@@ -90,6 +91,7 @@ function App() {
           </ul>
         </div>
       </main>
+      <BottomNav />
     </>
   );
 }

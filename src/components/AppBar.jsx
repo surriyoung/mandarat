@@ -10,9 +10,9 @@ import logo from "/assets/logo.svg"; // 로고 파일 import
 export default function MyAppBar() {
   return (
     <AppBar
-      position="static"
+      position="fixed"
       sx={{
-        backgroundColor: "transparent",
+        backgroundColor: "white",
         boxShadow: "none",
         width: "100vw",
         top: 0,
@@ -33,9 +33,7 @@ export default function MyAppBar() {
         {/* 오른쪽 - 알람 & 메시지 아이콘 */}
         <Box>
           <IconButton>
-            <NotificationsIcon
-              sx={{ color: "black", marginRight: "4px", height: 24 }}
-            />
+            <NotificationsIcon sx={{ color: "black", height: 24 }} />
           </IconButton>
           <IconButton>
             <MessageIcon sx={{ color: "black", height: 24 }} />
