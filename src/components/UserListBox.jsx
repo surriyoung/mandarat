@@ -1,4 +1,3 @@
-import React from "react";
 import UserList from "./UserList"; // UserList 컴포넌트를 import 합니다.
 
 const UserListBox = ({ users }) => {

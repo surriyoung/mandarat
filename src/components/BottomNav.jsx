@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // React Router에서 useNavigate 임포트
 import AppBar from "@mui/material/AppBar";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
@@ -8,9 +9,19 @@ import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 export default function BottomNav() {
   const [value, setValue] = useState(0);
+  const navigate = useNavigate(); // 페이지 이동을 위한 navigate 사용
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+
+    // 선택된 값에 따라 페이지 이동
+    if (newValue === 0) {
+      navigate("/");
+    } else if (newValue === 1) {
+      navigate("/my-plan");
+    } else if (newValue === 2) {
+      navigate("/my-page");
+    }
   };
 
   return (
@@ -28,14 +39,41 @@ export default function BottomNav() {
         onChange={handleChange}
         showLabels
         sx={{
-          backgroundColor: "white", // 하단 네비게이션 배경 투명화
-          boxShadow: "none", // 그림자 없애기
+          backgroundColor: "white",
+          boxShadow: "none",
           width: "100vw",
         }}
       >
-        <BottomNavigationAction label="홈" icon={<HomeIcon />} />
-        <BottomNavigationAction label="나의 계획표" icon={<ListIcon />} />
-        <BottomNavigationAction label="마이" icon={<EmojiEmotionsIcon />} />
+        <BottomNavigationAction
+          label="홈"
+          icon={<HomeIcon />}
+          sx={{
+            "&:focus": {
+              outline: "none",
+              boxShadow: "none",
+            },
+          }}
+        />
+        <BottomNavigationAction
+          label="나의 계획표"
+          icon={<ListIcon />}
+          sx={{
+            "&:focus": {
+              outline: "none",
+              boxShadow: "none",
+            },
+          }}
+        />
+        <BottomNavigationAction
+          label="마이"
+          icon={<EmojiEmotionsIcon />}
+          sx={{
+            "&:focus": {
+              outline: "none",
+              boxShadow: "none",
+            },
+          }}
+        />
       </BottomNavigation>
     </AppBar>
   );

@@ -1,15 +1,23 @@
-import React from "react";
+const MainTile = ({ itemBackgroundColors, itemTexts, onItemClick }) => {
+  const gridItems = Array.from({ length: 9 }, (_, index) => {
+    const handleClick = () => {
+      if (index === 4) {
+        // 5번째 아이템 (index는 0부터 시작)
+        onItemClick(index);
+      }
+    };
 
-const MainTile = ({ itemBackgroundColors, itemTexts }) => {
-  const gridItems = Array.from({ length: 9 }, (_, index) => (
-    <div
-      key={index}
-      className="grid-item"
-      style={{ backgroundColor: itemBackgroundColors[index] }}
-    >
-      <span>{itemTexts[index]}</span> {/* 텍스트를 배열로 전달받아 표시 */}
-    </div>
-  ));
+    return (
+      <div
+        key={index}
+        className="grid-item"
+        style={{ backgroundColor: itemBackgroundColors[index] }}
+        onClick={handleClick} // 클릭 이벤트 추가
+      >
+        <span>{itemTexts[index]}</span>
+      </div>
+    );
+  });
 
   return <div className="grid-container">{gridItems}</div>;
 };

@@ -7,6 +7,10 @@
   max-width: 350px;
 }
 
+.mr-10 {
+  margin-right: 10px !important;
+}
+
 /* UserList 스타일 */
 .user-item {
   display: flex;
@@ -93,6 +97,28 @@
   padding: 15px;
 }
 
+.grid-item:nth-child(5) {
+  cursor: pointer;
+  position: relative;
+}
+
+.grid-item:nth-child(5)::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.grid-item:nth-child(5):hover::after {
+  opacity: 0.2;
+}
+
 .grid-item span {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -119,6 +145,9 @@
   align-items: center;
   column-gap: 10px;
 }
+.goal-list li:nth-child(5) {
+  display: none;
+}
 .goal-list li span {
   display: inline-block;
   width: 100%;
@@ -129,4 +158,29 @@
 }
 .css-ly0n5-MuiBottomNavigation-root {
   width: 100% !important;
+}
+
+/* 나의 계획표 */
+.myplan-list.end {
+  margin-top: 25px;
+}
+.myplan-list-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+.myplan-list .my-list-box {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 15px;
+  height: 50px;
+}
+.myplan-list .my-list-box:last-child {
+  margin-bottom: 0;
+}
+.my-list-box .plan-title {
+  width: 100%;
 }

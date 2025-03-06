@@ -1,4 +1,3 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -32,10 +31,25 @@ export default function MyAppBar() {
 
         {/* 오른쪽 - 알람 & 메시지 아이콘 */}
         <Box>
-          <IconButton>
+          <IconButton
+            className="mr-10"
+            sx={{
+              "&:focus": {
+                outline: "none",
+                boxShadow: "none",
+              },
+            }}
+          >
             <NotificationsIcon sx={{ color: "black", height: 24 }} />
           </IconButton>
-          <IconButton>
+          <IconButton
+            sx={{
+              "&:focus": {
+                outline: "none",
+                boxShadow: "none",
+              },
+            }}
+          >
             <MessageIcon sx={{ color: "black", height: 24 }} />
           </IconButton>
         </Box>

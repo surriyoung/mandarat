@@ -1,5 +1,3 @@
-import React from "react";
-
 const UserList = ({ profileImage, nickname }) => {
   return (
     <div className="user-item">
